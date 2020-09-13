@@ -8,7 +8,7 @@ namespace P3_Code
 {
     public interface IEmployeeRepository
     {
-        int Save(Employee Emp);
+        int Save(Employee Emp); // This does a thing
         List<Employee> GetAll();
         decimal GetSalary(int Id);
     }
