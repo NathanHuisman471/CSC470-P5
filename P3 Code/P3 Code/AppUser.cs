@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace P3_Code
 {
-    public class Employee
+    public class AppUser
     {
-        public int Id;
+        public string UserName;
+        public string Password;
         public string LastName;
         public string FirstName;
-        public decimal Salary;
+        public string EmailAddress;
+        public bool IsAuthenticated;
     }
 }

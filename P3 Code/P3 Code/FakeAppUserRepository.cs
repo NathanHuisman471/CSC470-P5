@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using P3_Code;
+
 namespace E3_Code
 {
     public class FakeAppUserRepository : IAppUserRepository
@@ -10,70 +12,58 @@ namespace E3_Code
             {
                 AppUsers = new Dictionary<string, AppUser>();
                 // Add some default employees to work with
-                AppUsers.Add(davebish, new AppUser
+                AppUsers.Add("davebish", new AppUser
                 {
-                    UserName = davebish,
-                    Password = SocialLoafing,
+                    UserName = "davebish",
+                    Password = "SocialLoafing",
                     LastName = "Bishop",
-                    FirstName = "Barb",
-                    EmailAddress = davebish@trojans.dsu.edu
+                    FirstName = "Dave",
+                    EmailAddress = "davebish@trojans.dsu.edu",
                     IsAuthenticated = true
 
                 });
-                AppUsers.Add(moliver, new AppUser
+                AppUsers.Add("moliver", new AppUser
 
                 {
-                    UserName = moliver,
-                    Password = SleepAllDayPlease,
+                    UserName = "moliver",
+                    Password = "SleepAllDayPlease",
                     LastName = "Oliver",
                     FirstName = "Matthew",
-                    EmailAddress = matthew.oliver@trojans.dsu.edu,
+                    EmailAddress = "matthew.oliver@trojans.dsu.edu",
                     IsAuthenticated = true
 
                 });
+            }
         }
-            private string GetNextUserName()
+        public bool Login(string GivenUserName, string GivenPassword)
+        {
+            // Look up AppUser by UserName in AppUsers Dictionary
+            string StoredPassword = AppUsers[GivenUserName].Password;
+            // Compare the given Password with the AppUser.Password
+            return GivenPassword == StoredPassword;
+        }
+        public List<AppUser> GetAll()
+        {
+            List<AppUser> users = new List<AppUser>();
+            foreach (KeyValuePair<string, AppUser> appuser in AppUsers)
             {
-                int curMaxUserName = 0;
-
-                foreach (KeyValuePair<int, AppUser> keyValuePair in AppUsers)
-                {
-                    if (keyValuePair.Key > curMaxUserName)
-                    {
-                        curMaxUserName = keyValuePair.Key;
-                    }
-                }
-                return ++curMaxUserName;
+                users.Add(appuser.Value);
             }
-            public bool Login(string UserName, string Password)
+            return users;
+        }
+        public bool SetAuthentication(string UserName, bool IsAuthenticated)
+        {
+            bool authentication = false;
+            AppUser appuser;
+            if (AppUsers.TryGetValue(UserName, out appuser))
             {
-                string UserName = GetNextUserName();
-                appUser.UserName = UserName;
-                AppUsers.Add(appUser.Username, appUser);
-                return UserName;
+                authentication = appuser.IsAuthenticated;
             }
-            public List<AppUser> GetAll()
-            {
-                List<AppUser> users = new List<AppUser>();
-                foreach (KeyValuePair<string, AppUser> appuser in AppUsers)
-                {
-                    users.Add(appuser.Value);
-                }
-                return users;
-            }
-            public bool SetAuthentication(string UserName, bool IsAuthenticated)
-            {
-                bool authentication = false;
-                AppUser appuser;
-                if (AppUsers.TryGetValue(UserName, out appuser))
-                {
-                    authentication = appuser.IsAuthenticated;
-                }
-                return authentication;
-            }
-            public AppUser GetByUserName(string UserName)
-            {
-            AppUsers appuser;
+            return authentication;
+        }
+        public AppUser GetByUserName(string UserName)
+        {
+            AppUser appuser;
             bool ignore = AppUsers.TryGetValue(UserName, out appuser);
             return appuser;
         }
