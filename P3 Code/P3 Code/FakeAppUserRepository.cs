@@ -37,10 +37,13 @@ namespace E3_Code
         }
         public bool Login(string GivenUserName, string GivenPassword)
         {
-            // Look up AppUser by UserName in AppUsers Dictionary
-            string StoredPassword = AppUsers[GivenUserName].Password;
-            // Compare the given Password with the AppUser.Password
-            return GivenPassword == StoredPassword;
+            bool match = false;
+            AppUser appUser;
+            if (AppUsers.TryGetValue(GivenUserName, out appUser))
+            {
+                match = appUser.Password == GivenPassword;
+            }
+            return match;
         }
         public List<AppUser> GetAll()
         {
