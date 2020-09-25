@@ -14,5 +14,6 @@ namespace P3_Code
         public string FirstName;
         public string EmailAddress;
         public bool IsAuthenticated;
+        //random comment
     }
 }
