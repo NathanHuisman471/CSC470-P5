@@ -16,5 +16,27 @@ namespace P3_Code
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        string Username;
+        string Password;
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Username = UserNameTextBox.ToString();
+            Password = Password.ToString();
+            //Login(Username, Password);
+            MainForm ss = new MainForm();
+            ss.Show();
+        }
     }
 }
