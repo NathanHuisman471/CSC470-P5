@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E3_Code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,14 +30,28 @@ namespace P3_Code
 
         string Username;
         string Password;
-        private void LoginButton_Click(object sender, EventArgs e)
+        bool credentialsAccepted;
+        public void LoginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Username = UserNameTextBox.ToString();
-            Password = Password.ToString();
-            //Login(Username, Password);
-            MainForm ss = new MainForm();
-            ss.Show();
+            Username = UserNameTextBox.Text;
+            Password = PasswordTextBox.Text;
+            FakeAppUserRepository fr = new FakeAppUserRepository();
+            credentialsAccepted = fr.Login(Username, Password);
+//           System.Windows.Forms.MessageBox.Show(credentialsAccepted.ToString());
+//            System.Windows.Forms.MessageBox.Show(Username);
+//            System.Windows.Forms.MessageBox.Show(Password);
+            if (credentialsAccepted == true)
+            {
+                this.Hide();
+                MainForm ss = new MainForm();
+                ss.Show();
+            } 
+            
+            else
+
+            {
+                System.Windows.Forms.MessageBox.Show("Incorrect Username/Password");
+            }
         }
     }
 }
