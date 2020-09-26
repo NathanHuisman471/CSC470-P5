@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace P3_Code
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -36,14 +36,14 @@ namespace P3_Code
             Username = UserNameTextBox.Text;
             Password = PasswordTextBox.Text;
             FakeAppUserRepository fr = new FakeAppUserRepository();
-            credentialsAccepted = fr.Login(Username, Password);
+            credentialsAccepted = fr.Login(Username, Password);     // Confirms login info is correct
 //           System.Windows.Forms.MessageBox.Show(credentialsAccepted.ToString());
 //            System.Windows.Forms.MessageBox.Show(Username);
 //            System.Windows.Forms.MessageBox.Show(Password);
             if (credentialsAccepted == true)
             {
                 this.Hide();
-                MainForm ss = new MainForm();
+                MainForm ss = new MainForm();       // If login info is correct, opens MainForm
                 ss.Show();
             } 
             
@@ -52,6 +52,11 @@ namespace P3_Code
             {
                 System.Windows.Forms.MessageBox.Show("Incorrect Username/Password");
             }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            PasswordTextBox.PasswordChar = '*';     // Sets PasswordTextBox input to be *
         }
     }
 }

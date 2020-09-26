@@ -1,6 +1,6 @@
 ﻿namespace P3_Code
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -38,21 +38,21 @@
             // 
             // UserNameTextBox
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(273, 115);
+            this.UserNameTextBox.Location = new System.Drawing.Point(104, 41);
             this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(216, 20);
+            this.UserNameTextBox.Size = new System.Drawing.Size(267, 20);
             this.UserNameTextBox.TabIndex = 0;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(273, 153);
+            this.PasswordTextBox.Location = new System.Drawing.Point(104, 77);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(216, 20);
+            this.PasswordTextBox.Size = new System.Drawing.Size(267, 20);
             this.PasswordTextBox.TabIndex = 1;
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(414, 207);
+            this.LoginButton.Location = new System.Drawing.Point(262, 137);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(273, 207);
+            this.CancelButton.Location = new System.Drawing.Point(146, 137);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 3;
@@ -73,7 +73,7 @@
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(187, 122);
+            this.UsernameLabel.Location = new System.Drawing.Point(19, 41);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(63, 13);
             this.UsernameLabel.TabIndex = 4;
@@ -83,25 +83,26 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(194, 160);
+            this.PasswordLabel.Location = new System.Drawing.Point(26, 80);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(56, 13);
             this.PasswordLabel.TabIndex = 5;
             this.PasswordLabel.Text = "Password:";
             // 
-            // Form1
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 312);
+            this.ClientSize = new System.Drawing.Size(394, 203);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UserNameTextBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormLogin";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

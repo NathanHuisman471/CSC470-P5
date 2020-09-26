@@ -16,5 +16,10 @@ namespace P3_Code
         {
             InitializeComponent();
         }
+
+        private void issueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
