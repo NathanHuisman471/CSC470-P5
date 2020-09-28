@@ -21,5 +21,10 @@ namespace P3_Code
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CenterToScreen();
+        }
     }
 }

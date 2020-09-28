@@ -28,7 +28,7 @@ namespace E3_Code
                     UserName = "moliver",
                     Password = "SleepAllDayPlease",
                     LastName = "Oliver",
-                    FirstName = "Matthew", // this me
+                    FirstName = "Matthew",
                     EmailAddress = "matthew.oliver@trojans.dsu.edu",
                     IsAuthenticated = true
 

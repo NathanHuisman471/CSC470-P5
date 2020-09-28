@@ -57,6 +57,7 @@ namespace P3_Code
         private void FormLogin_Load(object sender, EventArgs e)
         {
             PasswordTextBox.PasswordChar = '*';     // Sets PasswordTextBox input to be *
+            CenterToScreen();
         }
     }
 }
