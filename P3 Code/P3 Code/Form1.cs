@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace P3_Code
 {
-    public partial class FormLogin : Form       // Login Form class
+    public partial class FormLogin : Form
     {
         public FormLogin()
         {
-            InitializeComponent();      // Initialize login form first upon running program
+            InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,39 +25,39 @@ namespace P3_Code
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();       // If you click cancel button, the program terminates
+            this.Close();
         }
 
         string Username;
         string Password;
         bool credentialsAccepted;
-        public void LoginButton_Click(object sender, EventArgs e)       // Reacts upon fulfilling or failing credentials conditions, intent to Login iwith proper credentials
+        public void LoginButton_Click(object sender, EventArgs e)
         {
             Username = UserNameTextBox.Text;
             Password = PasswordTextBox.Text;
             FakeAppUserRepository fr = new FakeAppUserRepository();
-            credentialsAccepted = fr.Login(Username, Password);     // Confirms login info is correct
+            credentialsAccepted = fr.Login(Username, Password);
 //           System.Windows.Forms.MessageBox.Show(credentialsAccepted.ToString());
 //            System.Windows.Forms.MessageBox.Show(Username);
 //            System.Windows.Forms.MessageBox.Show(Password);
             if (credentialsAccepted == true)
             {
-                this.Hide();        // Login form goes away for main form to take center stage
-                MainForm ss = new MainForm();       // If login info is correct, opens MainForm
+                this.Hide();
+                MainForm ss = new MainForm();
                 ss.Show();
             } 
             
             else
 
             {
-                System.Windows.Forms.MessageBox.Show("Incorrect Username/Password");        // If incorrect user/pass, display text detailing wrong login
+                System.Windows.Forms.MessageBox.Show("Incorrect Username/Password");
             }
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            PasswordTextBox.PasswordChar = '*';     // Sets PasswordTextBox input to be *, you can set symbol to be whatever you want from here
-            CenterToScreen();       // Center login screen
+            PasswordTextBox.PasswordChar = '*';
+            CenterToScreen();
         }
     }
 }
