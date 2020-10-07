@@ -15,7 +15,7 @@ namespace E3_Code
                 AppUsers.Add("davebish", new AppUser
                 {
                     UserName = "davebish",
-                    Password = "SocialLoafing",
+                    Password = "Socialloaf",
                     LastName = "Bishop",
                     FirstName = "Dave",
                     EmailAddress = "davebish@trojans.dsu.edu",
@@ -26,7 +26,7 @@ namespace E3_Code
 
                 {
                     UserName = "moliver",
-                    Password = "SleepAllDayPlease",
+                    Password = "Needsleep",
                     LastName = "Oliver",
                     FirstName = "Matthew",
                     EmailAddress = "matthew.oliver@trojans.dsu.edu",

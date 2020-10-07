@@ -26,5 +26,10 @@ namespace P3_Code
         {
             CenterToScreen();
         }
+
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

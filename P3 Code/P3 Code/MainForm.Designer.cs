@@ -77,29 +77,30 @@
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
             this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.preferencesToolStripMenuItem.Text = "Preferences";
+            this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
             // selectProjectToolStripMenuItem
             // 
             this.selectProjectToolStripMenuItem.Name = "selectProjectToolStripMenuItem";
-            this.selectProjectToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.selectProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectProjectToolStripMenuItem.Text = "Select Project";
             // 
             // createProjectToolStripMenuItem
             // 
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
-            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createProjectToolStripMenuItem.Text = "Create Project";
             // 
             // modifyProjectToolStripMenuItem
             // 
             this.modifyProjectToolStripMenuItem.Name = "modifyProjectToolStripMenuItem";
-            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifyProjectToolStripMenuItem.Text = "Modify Project";
             // 
             // removeProjectToolStripMenuItem
             // 
             this.removeProjectToolStripMenuItem.Name = "removeProjectToolStripMenuItem";
-            this.removeProjectToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.removeProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeProjectToolStripMenuItem.Text = "Remove Project";
             // 
             // issueToolStripMenuItem
