@@ -30,6 +30,31 @@ namespace P3_Code
         private void FormSelectProject_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+
+            FakeProjectRepository fp = new FakeProjectRepository();
+            List<Project> list = fp.GetAll();
+
+            foreach(var Name in list)
+            {
+                listBox1.Items.Add(list[1]);
+            }
+        }
+
+        private void buttonSelectProject_Click(object sender, EventArgs e)
+        {
+
+            if(listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Must select a project to continue");
+            }
+            else
+            {
+                
+
+                this.Hide();
+                MainForm main = new MainForm();
+                main.Show();
+            }
         }
     }
 }

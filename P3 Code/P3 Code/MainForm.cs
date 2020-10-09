@@ -31,5 +31,30 @@ namespace P3_Code
         {
 
         }
+
+        private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormSelectProject selectproj = new FormSelectProject();
+            selectproj.Show();
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateProject cp = new CreateProject();
+            cp.Show();
+        }
+
+        private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModifyProject mp = new ModifyProject();
+            mp.Show();
+        }
+
+        private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveProject rp = new RemoveProject();
+            rp.Show();
+        }
     }
 }

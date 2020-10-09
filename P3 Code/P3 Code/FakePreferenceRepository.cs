@@ -27,7 +27,9 @@ namespace P3_Code
 
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {
-
+            Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
+            string value = "";
+            return value;
         }
     }
 }

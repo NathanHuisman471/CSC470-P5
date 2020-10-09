@@ -60,6 +60,7 @@
             this.buttonSelectProject.TabIndex = 2;
             this.buttonSelectProject.Text = "Select Project";
             this.buttonSelectProject.UseVisualStyleBackColor = true;
+            this.buttonSelectProject.Click += new System.EventHandler(this.buttonSelectProject_Click);
             // 
             // FormSelectProject
             // 

@@ -43,8 +43,8 @@ namespace P3_Code
             if (credentialsAccepted == true)
             {
                 this.Hide();
-                MainForm ss = new MainForm();
-                ss.Show();
+                FormSelectProject startingproj = new FormSelectProject();
+                startingproj.Show();
             } 
             
             else

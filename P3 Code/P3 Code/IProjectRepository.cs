@@ -8,9 +8,9 @@ namespace P3_Code
 {
     public interface IProjectRepository
     {
-        string Add(Project project, int out Id);
+        string Add(Project project, out int Id);
         string Remove(int projectId);
-        string Modify(int projectId, Project projectId);
+        string Modify(int projectId, Project project);
         List<Project> GetAll();
         bool IsDuplicateName(string projectName);
     }

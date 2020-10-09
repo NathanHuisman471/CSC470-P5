@@ -84,24 +84,28 @@
             this.selectProjectToolStripMenuItem.Name = "selectProjectToolStripMenuItem";
             this.selectProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectProjectToolStripMenuItem.Text = "Select Project";
+            this.selectProjectToolStripMenuItem.Click += new System.EventHandler(this.selectProjectToolStripMenuItem_Click);
             // 
             // createProjectToolStripMenuItem
             // 
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
             this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createProjectToolStripMenuItem.Text = "Create Project";
+            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // modifyProjectToolStripMenuItem
             // 
             this.modifyProjectToolStripMenuItem.Name = "modifyProjectToolStripMenuItem";
             this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifyProjectToolStripMenuItem.Text = "Modify Project";
+            this.modifyProjectToolStripMenuItem.Click += new System.EventHandler(this.modifyProjectToolStripMenuItem_Click);
             // 
             // removeProjectToolStripMenuItem
             // 
             this.removeProjectToolStripMenuItem.Name = "removeProjectToolStripMenuItem";
             this.removeProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeProjectToolStripMenuItem.Text = "Remove Project";
+            this.removeProjectToolStripMenuItem.Click += new System.EventHandler(this.removeProjectToolStripMenuItem_Click);
             // 
             // issueToolStripMenuItem
             // 
