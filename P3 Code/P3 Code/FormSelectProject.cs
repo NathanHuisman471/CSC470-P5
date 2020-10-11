@@ -22,11 +22,6 @@ namespace P3_Code
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormSelectProject_Load(object sender, EventArgs e)
         {
             CenterToScreen();
@@ -54,6 +49,22 @@ namespace P3_Code
                 this.Hide();
                 MainForm main = new MainForm();
                 main.Show();
+            }
+        }
+
+        int numOfTimesClicked;
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            numOfTimesClicked++;
+            if(numOfTimesClicked == 1)
+            {
+                this.Hide();
+                MessageBox.Show("A project must be selected");
+                this.Show();
+            } 
+            else
+            {
+                Application.Exit();
             }
         }
     }
