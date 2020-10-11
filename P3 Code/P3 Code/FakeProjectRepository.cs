@@ -37,11 +37,7 @@ namespace P3_Code
                     Id = 3,
                     Name = "Hello3"
                 });
-                projects.Add(new Project
-                {
-                    Id = 4,
-                    Name = "Hello4"
-                });
+
             }
 
         }

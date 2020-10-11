@@ -29,9 +29,10 @@ namespace P3_Code
             FakeProjectRepository fp = new FakeProjectRepository();
             List<Project> list = fp.GetAll();
 
-            foreach(var Name in list)
+            foreach(var Project in list)
             {
-                listBox1.Items.Add(list[1]);
+                string projectsListed = (Project.Id + " - " + Project.Name);
+                listBox1.Items.Add(projectsListed);
             }
         }
 
