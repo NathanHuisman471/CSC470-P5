@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +14,7 @@ namespace P3_Code
         public const string PREFERENCE_PROJECT_NAME = "Project_Name";
         public const string NO_ERROR = "";
         private static Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
-    
+
         public string GetPreference(string UserName, string PreferenceName)
         {
             Dictionary<string, string> NameValuePair = new Dictionary<string, string>();
@@ -27,8 +29,16 @@ namespace P3_Code
 
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {
-            Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
+
+            //Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
+
+            Dictionary<string, string> NameValuePair = new Dictionary<string, string>();
             string value = "";
+
+            NameValuePair.Add(PreferenceName, Value);
+
+            preferences.Add(UserName, NameValuePair);
+
             return value;
         }
     }

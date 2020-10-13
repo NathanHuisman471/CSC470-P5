@@ -10,10 +10,10 @@ namespace P3_Code
     class FakeProjectRepository : IProjectRepository
     {
         public const string NO_ERROR = "";
-        public const string MODIFIED_PROJECT_ID_ERROR = "Can not modify the project id";
-        public const string DUPLICATE_PROJECT_NAME_ERROR = "Project name already exists";
-        public const string NO_PROJECT_FOUND_ERROR = "No project found";
-        public const string EMPTY_PROJECT_NAME_ERROR = "Project name is empty or blank";
+        public const string MODIFIED_PROJECT_ID_ERROR = "Can not modify the project id.";
+        public const string DUPLICATE_PROJECT_NAME_ERROR = "Project name already exists.";
+        public const string NO_PROJECT_FOUND_ERROR = "No project found.";
+        public const string EMPTY_PROJECT_NAME_ERROR = "Project name is empty or blank.";
         private static List<Project> projects;
         public int nextId = 4;
 
@@ -27,22 +27,22 @@ namespace P3_Code
                 projects.Add(new Project
                 {
                     Id = 1,
-                    Name = "Hello1"
+                    Name = "Accounting project"
                 });
                 projects.Add(new Project
                 {
                     Id = 2,
-                    Name = "Hello2"
+                    Name = "Big expensive project"
                 });
                 projects.Add(new Project
                 {
                     Id = 3,
-                    Name = "Hello3"
+                    Name = "Some other project"
                 });
                 projects.Add(new Project
                 {
                     Id = 4,
-                    Name = "Hello4"
+                    Name = "Small inexpensive project"
                 });
             }
 
@@ -70,7 +70,7 @@ namespace P3_Code
             //make sure user given name is valid
             project.Name = project.Name.Trim();
             project.Name.Trim(); //removes leading and trailing white spaces
-            if (project.Name == null)
+            if (project.Name == null || project.Name == "")
             {
                 return (EMPTY_PROJECT_NAME_ERROR);
             }
@@ -113,7 +113,7 @@ namespace P3_Code
 
             project.Name = project.Name.Trim();
             project.Name.Trim(); //removes leading and trailing white spaces
-            if (project.Name == null)
+            if (project.Name == null || project.Name == "")
             {
                 return (EMPTY_PROJECT_NAME_ERROR);
             }

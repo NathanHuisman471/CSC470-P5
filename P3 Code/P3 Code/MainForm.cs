@@ -49,16 +49,12 @@ namespace P3_Code
         {
             FormSelectProject selectproj = new FormSelectProject("Modify");
             selectproj.Show();
-            //ModifyProject mp = new ModifyProject();
-            //mp.Show();
         }
 
         private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSelectProject selectproj = new FormSelectProject("Remove");
             selectproj.Show();
-            //RemoveProject rp = new RemoveProject();
-            //rp.Show();
         }
     }
 }
