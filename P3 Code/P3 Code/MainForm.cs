@@ -55,8 +55,10 @@ namespace P3_Code
 
         private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveProject rp = new RemoveProject();
-            rp.Show();
+            FormSelectProject selectproj = new FormSelectProject("Remove");
+            selectproj.Show();
+            //RemoveProject rp = new RemoveProject();
+            //rp.Show();
         }
     }
 }

@@ -12,10 +12,10 @@ namespace P3_Code
         public const string NO_ERROR = "";
         public const string MODIFIED_PROJECT_ID_ERROR = "Can not modify the project id";
         public const string DUPLICATE_PROJECT_NAME_ERROR = "Project name already exists";
-        public const string NO_PROJECT_FOUND_ERROR = "";
+        public const string NO_PROJECT_FOUND_ERROR = "No project found";
         public const string EMPTY_PROJECT_NAME_ERROR = "Project name is empty or blank";
         private static List<Project> projects;
-        private static int nextId = 0;
+        public int nextId = 4;
 
 
         public FakeProjectRepository()
@@ -50,10 +50,11 @@ namespace P3_Code
 
         public int GetNextID()
         {
+            int currentId;
             foreach (var Project in projects)
             {
-                int currentId = Project.Id;
-                if(currentId > nextId)
+                currentId = Project.Id;
+                if(currentId >= nextId)
                 {
                     nextId = currentId;
                 }
@@ -65,6 +66,8 @@ namespace P3_Code
         public string Add(Project project, out int Id)
         {
             Id = GetNextID();
+
+            MessageBox.Show(Id.ToString());
 
             //make sure user given name is valid
             project.Name = project.Name.Trim();
@@ -108,7 +111,7 @@ namespace P3_Code
 
         public string Modify(int projectId, Project project)
         {
-            int initialProjectId = projects[projectId].Id;
+            int initialProjectId = projectId;
 
             project.Name = project.Name.Trim();
             project.Name.Trim(); //removes leading and trailing white spaces
@@ -122,10 +125,24 @@ namespace P3_Code
                 return (DUPLICATE_PROJECT_NAME_ERROR);
             }
 
-            projects[projectId].Name = project.Name;
+            bool projectFound = false;
+            int listIndex = 0;
+            foreach (var Project in projects)
+            {
+                if(Project.Id == projectId)
+                {
+                    projects[listIndex].Name = project.Name;
+                    projectFound = true;
+                }
+                if(projectFound == true)
+                {
+                    return (NO_ERROR);
+                }
+                listIndex++;
+            }
 
             //since the user has no way to modify the id, is this just a sanity check???? but it's required
-            if(initialProjectId != projects[projectId].Id)
+            if(projectFound == false)
             {
                 return (MODIFIED_PROJECT_ID_ERROR);
             }
@@ -135,7 +152,16 @@ namespace P3_Code
 
         public string Remove(int projectId)
         {
-            throw new NotImplementedException();
+            var itemToRemove = projects.SingleOrDefault(r => r.Id == projectId);
+            if (itemToRemove != null)
+            {
+                projects.Remove(itemToRemove);
+            }
+            else
+            {
+                return (NO_PROJECT_FOUND_ERROR);
+            }
+            return (NO_ERROR);
         }
     }
 }

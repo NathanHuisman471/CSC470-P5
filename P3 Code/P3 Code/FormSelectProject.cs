@@ -80,6 +80,16 @@ namespace P3_Code
                     main.Show();
                     this.Close();
                 }
+                else if(whoCalledTheMethod == "Remove")
+                {
+                    string selectedItem = listBox1.SelectedItem.ToString();
+                    char idInCharacterForm = selectedItem[0];
+                    int selectedId = idInCharacterForm - '0';
+                    this.Hide();
+                    RemoveProject removeProject = new RemoveProject(selectedId);
+                    removeProject.Show();
+                    this.Close();
+                }
             }
         }
 

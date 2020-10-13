@@ -12,8 +12,10 @@ namespace P3_Code
 {
     public partial class RemoveProject : Form
     {
-        public RemoveProject()
+        public int projectToBeRemoved;
+        public RemoveProject(int id)
         {
+            projectToBeRemoved = id;
             InitializeComponent();
         }
 
@@ -22,17 +24,33 @@ namespace P3_Code
             CenterToScreen();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RemoveProjectRemoveButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to permenantly remove this project?", "Attention", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
-                //do something
-            }else if(dialogResult == DialogResult.No)
+                FakeProjectRepository projectRepository = new FakeProjectRepository();
+                string result = projectRepository.Remove(projectToBeRemoved);
+                if (result != FakePreferenceRepository.NO_ERROR)
+                {
+                    MessageBox.Show("Error removing project. " + result);
+                }
+                else
+                {
+                    MessageBox.Show("Successfully removing project");
+                }
+                this.Close();
+            }
+            else if(dialogResult == DialogResult.No)
             {
-                //do something
+                this.Close();
             }
 
+        }
+
+        private void RemoveProjectCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
