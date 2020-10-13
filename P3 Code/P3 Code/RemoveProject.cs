@@ -43,11 +43,11 @@ namespace P3_Code
                 string result = projectRepository.Remove(projectToBeRemoved);
                 if (result != FakePreferenceRepository.NO_ERROR)
                 {
-                    MessageBox.Show("Error removing project. " + result);
+                    MessageBox.Show("No project found. " + result);
                 }
                 else
                 {
-                    MessageBox.Show("Successfully removing project");
+                    MessageBox.Show("Successfully removed project");
                 }
                 this.Close();
             }

@@ -25,6 +25,14 @@ namespace P3_Code
         private void MainForm_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+
+            string username = Properties.Settings.Default.Username;
+            string project = Properties.Settings.Default.Preference;
+
+            FakePreferenceRepository pref = new FakePreferenceRepository();
+
+            string title = pref.GetPreference(username, project);
+            this.Text = "Main - " + project;
         }
 
         private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +42,7 @@ namespace P3_Code
 
         private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             FormSelectProject selectproj = new FormSelectProject("Main");
             selectproj.Show();
         }

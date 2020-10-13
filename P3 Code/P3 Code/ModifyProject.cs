@@ -30,8 +30,17 @@ namespace P3_Code
 
         private void ModifyProjectModifyButton_Click(object sender, EventArgs e)
         {
-            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            string oldName = "Accounting project";
             string newName = ModifyProjectTextBox.Text;
+            string UserName = "davebish";
+            FakePreferenceRepository preferenceRepository = new FakePreferenceRepository();
+            string pref = preferenceRepository.GetPreference(UserName, oldName);
+            if(pref == "")
+            {
+                MessageBox.Show("Couldn't find user or preference" + pref);
+            }
+            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            //string newName = ModifyProjectTextBox.Text;
             string result = projectRepository.Modify(idToBeModified, new Project { Name = newName });
             if (result != FakePreferenceRepository.NO_ERROR)
             {

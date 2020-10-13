@@ -37,6 +37,7 @@ namespace P3_Code
             Password = PasswordTextBox.Text;
             FakeAppUserRepository fr = new FakeAppUserRepository();
             credentialsAccepted = fr.Login(Username, Password);
+            Properties.Settings.Default.Username = Username;
             if (credentialsAccepted == true)
             {
                 this.Hide();

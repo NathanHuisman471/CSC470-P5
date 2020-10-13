@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,8 @@ namespace P3_Code
                 string projectsListed = (Project.Id + " - " + Project.Name);
                 listBox1.Items.Add(projectsListed);
             }
+
+
         }
 
         private void buttonSelectProject_Click(object sender, EventArgs e)
@@ -51,17 +54,44 @@ namespace P3_Code
                 if (whoCalledTheMethod == "Modify")
                 {
                     string selectedItem = listBox1.SelectedItem.ToString();
-                    char idInCharacterForm = selectedItem[0];
-                    int selectedId = idInCharacterForm - '0';
-                    this.Hide();
-                    ModifyProject modifyProject = new ModifyProject(selectedId);
-                    modifyProject.Show();
-                    this.Close();
+                    string result = selectedItem.Substring(4, selectedItem.Length - 4);
+
+                    if( result == Properties.Settings.Default.Preference)
+                    {
+                        MessageBox.Show("Cannot modify your current session project.");
+                        this.Hide();
+                        MainForm returntomain = new MainForm();
+                        returntomain.Show();
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        char idInCharacterForm = selectedItem[0];
+                        int selectedId = idInCharacterForm - '0';
+                        this.Hide();
+                        ModifyProject modifyProject = new ModifyProject(selectedId);
+                        modifyProject.Show();
+                        this.Close();
+
+                    }
                 }
                 else if(whoCalledTheMethod == "Main" || whoCalledTheMethod == "Login")
                 {
+                    string selectedItem = listBox1.SelectedItem.ToString();
+                    string result = selectedItem.Substring(4, selectedItem.Length - 4);
+                    Properties.Settings.Default.Preference = result;
+                    string preference = Properties.Settings.Default.Preference;
+                    char idInCharacterForm = selectedItem[0];
+                    string UserName = Properties.Settings.Default.Username; 
                     FakePreferenceRepository preferenceRepository = new FakePreferenceRepository();
-                    //add functionality for preferences here
+                    preferenceRepository.SetPreference(UserName, result, Char.ToString(selectedItem[0]));
+                    
+                    FakePreferenceRepository pref = new FakePreferenceRepository();
+                    pref.GetPreference(UserName, result);
+
+
+
                     this.Hide();
                     MainForm main = new MainForm();
                     main.Show();
@@ -69,13 +99,27 @@ namespace P3_Code
                 }
                 else if(whoCalledTheMethod == "Remove")
                 {
+
                     string selectedItem = listBox1.SelectedItem.ToString();
-                    char idInCharacterForm = selectedItem[0];
-                    int selectedId = idInCharacterForm - '0';
-                    this.Hide();
-                    RemoveProject removeProject = new RemoveProject(selectedId);
-                    removeProject.Show();
-                    this.Close();
+                    string result = selectedItem.Substring(4, selectedItem.Length - 4);
+
+                    if( result == Properties.Settings.Default.Preference)
+                    {
+                        MessageBox.Show("Cannot remove your current session project");
+                        this.Hide();
+                        MainForm main = new MainForm();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        char idInCharacterForm = selectedItem[0];
+                        int selectedId = idInCharacterForm - '0';
+                        this.Hide();
+                        RemoveProject removeProject = new RemoveProject(selectedId);
+                        removeProject.Show();
+                        this.Close();
+                    }
                 }
             }
         }

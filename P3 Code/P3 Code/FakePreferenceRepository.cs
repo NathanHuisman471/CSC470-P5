@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace P3_Code
 {
@@ -15,6 +16,8 @@ namespace P3_Code
         public const string NO_ERROR = "";
         private static Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
 
+
+
         public string GetPreference(string UserName, string PreferenceName)
         {
             Dictionary<string, string> NameValuePair = new Dictionary<string, string>();
@@ -24,21 +27,22 @@ namespace P3_Code
             {
                 NameValuePair.TryGetValue(PreferenceName, out value);
             }
+            value = Properties.Settings.Default.Preference;
             return value;
         }
 
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {
 
-            //Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
+            Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
 
             Dictionary<string, string> NameValuePair = new Dictionary<string, string>();
             string value = "";
 
-            NameValuePair.Add(PreferenceName, Value);
+            NameValuePair.Add(UserName, Value);
+            preferences.Add(PreferenceName, NameValuePair);
 
-            preferences.Add(UserName, NameValuePair);
-
+            
             return value;
         }
     }
