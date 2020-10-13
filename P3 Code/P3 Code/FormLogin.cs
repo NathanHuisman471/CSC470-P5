@@ -23,7 +23,7 @@ namespace P3_Code
 
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void FormLoginCancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

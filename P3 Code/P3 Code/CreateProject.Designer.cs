@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CreateProjectAddButton = new System.Windows.Forms.Button();
+            this.CreateProjectCancelButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // CreateProjectAddButton
             // 
-            this.button1.Location = new System.Drawing.Point(312, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CreateProjectAddButton.Location = new System.Drawing.Point(312, 84);
+            this.CreateProjectAddButton.Name = "CreateProjectAddButton";
+            this.CreateProjectAddButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateProjectAddButton.TabIndex = 0;
+            this.CreateProjectAddButton.Text = "Add";
+            this.CreateProjectAddButton.UseVisualStyleBackColor = true;
+            this.CreateProjectAddButton.Click += new System.EventHandler(this.CreateProjectAddButton_Click);
             // 
-            // button2
+            // CreateProjectCancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(180, 84);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CreateProjectCancelButton.Location = new System.Drawing.Point(180, 84);
+            this.CreateProjectCancelButton.Name = "CreateProjectCancelButton";
+            this.CreateProjectCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateProjectCancelButton.TabIndex = 1;
+            this.CreateProjectCancelButton.Text = "Cancel";
+            this.CreateProjectCancelButton.UseVisualStyleBackColor = true;
+            this.CreateProjectCancelButton.Click += new System.EventHandler(this.CreateProjectCancelButton_Click);
             // 
             // textBox1
             // 
@@ -75,8 +77,8 @@
             this.ClientSize = new System.Drawing.Size(421, 144);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CreateProjectCancelButton);
+            this.Controls.Add(this.CreateProjectAddButton);
             this.Name = "CreateProject";
             this.Text = "Create Project";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -87,8 +89,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CreateProjectAddButton;
+        private System.Windows.Forms.Button CreateProjectCancelButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
     }

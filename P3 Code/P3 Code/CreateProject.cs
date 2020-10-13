@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,22 @@ namespace P3_Code
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+        }
+
+        private void CreateProjectCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CreateProjectAddButton_Click(object sender, EventArgs e)
+        {
+            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            int newId;
+            string Result = projectRepository.Add(new Project{Name = "The user input"}, out newId);
+            if(Result != FakePreferenceRepository.NO_ERROR)
+            {
+                MessageBox.Show("Error adding project. " + Result);
+            }
         }
     }
 }

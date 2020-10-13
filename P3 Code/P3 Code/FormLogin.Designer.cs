@@ -31,7 +31,7 @@
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.FormLoginCancelButton = new System.Windows.Forms.Button();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -60,15 +60,16 @@
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // CancelButton
+            // FormLoginCancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(146, 137);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 3;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.FormLoginCancelButton.AutoSize = true;
+            this.FormLoginCancelButton.Location = new System.Drawing.Point(146, 137);
+            this.FormLoginCancelButton.Name = "FormLoginCancelButton";
+            this.FormLoginCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.FormLoginCancelButton.TabIndex = 3;
+            this.FormLoginCancelButton.Text = "Cancel";
+            this.FormLoginCancelButton.UseVisualStyleBackColor = true;
+            this.FormLoginCancelButton.Click += new System.EventHandler(this.FormLoginCancelButton_Click);
             // 
             // UsernameLabel
             // 
@@ -96,7 +97,7 @@
             this.ClientSize = new System.Drawing.Size(394, 203);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.FormLoginCancelButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UserNameTextBox);
@@ -113,7 +114,7 @@
         private System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button FormLoginCancelButton;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
     }
