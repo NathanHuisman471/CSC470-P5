@@ -10,7 +10,7 @@ namespace P3_Code
     class FakeProjectRepository : IProjectRepository
     {
         public const string NO_ERROR = "";
-        public const string MODIFIED_PROJECT_ID_ERROR = "Project_Id";
+        public const string MODIFIED_PROJECT_ID_ERROR = "Can not modify the project id";
         public const string DUPLICATE_PROJECT_NAME_ERROR = "Project name already exists";
         public const string NO_PROJECT_FOUND_ERROR = "";
         public const string EMPTY_PROJECT_NAME_ERROR = "Project name is empty or blank";
@@ -108,7 +108,29 @@ namespace P3_Code
 
         public string Modify(int projectId, Project project)
         {
-            throw new NotImplementedException();
+            int initialProjectId = projects[projectId].Id;
+
+            project.Name = project.Name.Trim();
+            project.Name.Trim(); //removes leading and trailing white spaces
+            if (project.Name == null)
+            {
+                return (EMPTY_PROJECT_NAME_ERROR);
+            }
+            var isDuplicate = IsDuplicateName(project.Name);
+            if (isDuplicate == true)
+            {
+                return (DUPLICATE_PROJECT_NAME_ERROR);
+            }
+
+            projects[projectId].Name = project.Name;
+
+            //since the user has no way to modify the id, is this just a sanity check???? but it's required
+            if(initialProjectId != projects[projectId].Id)
+            {
+                return (MODIFIED_PROJECT_ID_ERROR);
+            }
+
+            return (NO_ERROR);
         }
 
         public string Remove(int projectId)

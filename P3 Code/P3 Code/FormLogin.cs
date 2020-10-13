@@ -40,7 +40,7 @@ namespace P3_Code
             if (credentialsAccepted == true)
             {
                 this.Hide();
-                FormSelectProject startingproj = new FormSelectProject();
+                FormSelectProject startingproj = new FormSelectProject("Login");
                 startingproj.Show();
             } 
             

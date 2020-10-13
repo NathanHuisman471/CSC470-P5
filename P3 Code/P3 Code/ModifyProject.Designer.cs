@@ -28,36 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ModifyProjectModifyButton = new System.Windows.Forms.Button();
+            this.ModifyProjectCancelButton = new System.Windows.Forms.Button();
+            this.ModifyProjectTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // ModifyProjectModifyButton
             // 
-            this.button1.Location = new System.Drawing.Point(325, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Modify";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ModifyProjectModifyButton.Location = new System.Drawing.Point(325, 94);
+            this.ModifyProjectModifyButton.Name = "ModifyProjectModifyButton";
+            this.ModifyProjectModifyButton.Size = new System.Drawing.Size(75, 23);
+            this.ModifyProjectModifyButton.TabIndex = 0;
+            this.ModifyProjectModifyButton.Text = "Modify";
+            this.ModifyProjectModifyButton.UseVisualStyleBackColor = true;
+            this.ModifyProjectModifyButton.Click += new System.EventHandler(this.ModifyProjectModifyButton_Click);
             // 
-            // button2
+            // ModifyProjectCancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(205, 94);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ModifyProjectCancelButton.Location = new System.Drawing.Point(205, 94);
+            this.ModifyProjectCancelButton.Name = "ModifyProjectCancelButton";
+            this.ModifyProjectCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.ModifyProjectCancelButton.TabIndex = 1;
+            this.ModifyProjectCancelButton.Text = "Cancel";
+            this.ModifyProjectCancelButton.UseVisualStyleBackColor = true;
+            this.ModifyProjectCancelButton.Click += new System.EventHandler(this.ModifyProjectCancelButton_Click);
             // 
-            // textBox1
+            // ModifyProjectTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
-            this.textBox1.TabIndex = 2;
+            this.ModifyProjectTextBox.Location = new System.Drawing.Point(119, 50);
+            this.ModifyProjectTextBox.Name = "ModifyProjectTextBox";
+            this.ModifyProjectTextBox.Size = new System.Drawing.Size(281, 20);
+            this.ModifyProjectTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -74,9 +76,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 163);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ModifyProjectTextBox);
+            this.Controls.Add(this.ModifyProjectCancelButton);
+            this.Controls.Add(this.ModifyProjectModifyButton);
             this.Name = "ModifyProject";
             this.Text = "Modify Project";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -87,9 +89,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button ModifyProjectModifyButton;
+        private System.Windows.Forms.Button ModifyProjectCancelButton;
+        private System.Windows.Forms.TextBox ModifyProjectTextBox;
         private System.Windows.Forms.Label label1;
     }
 }

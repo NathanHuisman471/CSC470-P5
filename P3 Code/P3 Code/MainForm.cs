@@ -35,7 +35,7 @@ namespace P3_Code
         private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormSelectProject selectproj = new FormSelectProject();
+            FormSelectProject selectproj = new FormSelectProject("Main");
             selectproj.Show();
         }
 
@@ -47,8 +47,10 @@ namespace P3_Code
 
         private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModifyProject mp = new ModifyProject();
-            mp.Show();
+            FormSelectProject selectproj = new FormSelectProject("Modify");
+            selectproj.Show();
+            //ModifyProject mp = new ModifyProject();
+            //mp.Show();
         }
 
         private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)

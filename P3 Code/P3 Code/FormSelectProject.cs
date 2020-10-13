@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,8 +13,10 @@ namespace P3_Code
 {
     public partial class FormSelectProject : Form
     {
-        public FormSelectProject()
+        public string whoCalledTheMethod = "";
+        public FormSelectProject(string caller)
         {
+            whoCalledTheMethod = caller;
             InitializeComponent();
         }
 
@@ -36,6 +39,19 @@ namespace P3_Code
             }
         }
 
+        public string SelectProjectToModifyOrDelete(string caller)
+        {
+            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            if(caller == "Modify")
+            {
+                string selectedItem = listBox1.SelectedItem.ToString();
+                char idInCharacterForm = selectedItem[0];
+                int selectedId = idInCharacterForm - '0';
+                MessageBox.Show(selectedId.ToString());
+            }
+            return ("hi");
+        }
+
         private void buttonSelectProject_Click(object sender, EventArgs e)
         {
 
@@ -45,11 +61,25 @@ namespace P3_Code
             }
             else
             {
-                
-
-                this.Hide();
-                MainForm main = new MainForm();
-                main.Show();
+                if (whoCalledTheMethod == "Modify")
+                {
+                    string selectedItem = listBox1.SelectedItem.ToString();
+                    char idInCharacterForm = selectedItem[0];
+                    int selectedId = idInCharacterForm - '0';
+                    this.Hide();
+                    ModifyProject modifyProject = new ModifyProject(selectedId);
+                    modifyProject.Show();
+                    this.Close();
+                }
+                else if(whoCalledTheMethod == "Main" || whoCalledTheMethod == "Login")
+                {
+                    FakePreferenceRepository preferenceRepository = new FakePreferenceRepository();
+                    //add functionality for preferences here
+                    this.Hide();
+                    MainForm main = new MainForm();
+                    main.Show();
+                    this.Close();
+                }
             }
         }
 

@@ -31,10 +31,9 @@ namespace P3_Code
         private void CreateProjectAddButton_Click(object sender, EventArgs e)
         {
             FakeProjectRepository projectRepository = new FakeProjectRepository();
-            int newId;
             string newName = CreateProjectTextBox.Text;
-            string Result = projectRepository.Add(new Project{Name = newName}, out newId);
-            if(Result != FakePreferenceRepository.NO_ERROR)
+            string Result = projectRepository.Add(new Project { Name = newName }, out int newId);
+            if (Result != FakePreferenceRepository.NO_ERROR)
             {
                 MessageBox.Show("Error adding project. " + Result);
             }

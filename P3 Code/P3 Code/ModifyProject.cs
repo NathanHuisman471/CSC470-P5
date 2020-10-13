@@ -12,14 +12,37 @@ namespace P3_Code
 {
     public partial class ModifyProject : Form
     {
-        public ModifyProject()
+        public int idToBeModified;
+        public ModifyProject(int Id)
         {
+            idToBeModified = Id;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+        }
+        private void ModifyProjectCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ModifyProjectModifyButton_Click(object sender, EventArgs e)
+        {
+            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            string newName = ModifyProjectTextBox.Text;
+            string result = projectRepository.Modify(idToBeModified, new Project { Name = newName });
+            if (result != FakePreferenceRepository.NO_ERROR)
+            {
+                MessageBox.Show("Error modifying project. " + result);
+            }
+            else
+            {
+                MessageBox.Show("Successfully modified project");
+            }
+            this.Close();
+
         }
     }
 }
