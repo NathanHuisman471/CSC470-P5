@@ -40,7 +40,11 @@ namespace P3_Code
             string value = "";
 
             NameValuePair.Add(UserName, Value);
-            preferences.Add(PreferenceName, NameValuePair);
+
+            if (!NameValuePair.ContainsKey(UserName))
+            {
+                preferences.Add(PreferenceName, NameValuePair);
+            }
 
             
             return value;
