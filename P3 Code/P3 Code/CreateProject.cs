@@ -32,11 +32,17 @@ namespace P3_Code
         {
             FakeProjectRepository projectRepository = new FakeProjectRepository();
             int newId;
-            string Result = projectRepository.Add(new Project{Name = "The user input"}, out newId);
+            string newName = CreateProjectTextBox.Text;
+            string Result = projectRepository.Add(new Project{Name = newName}, out newId);
             if(Result != FakePreferenceRepository.NO_ERROR)
             {
                 MessageBox.Show("Error adding project. " + Result);
             }
+            else
+            {
+                MessageBox.Show("Successfully added project");
+            }
+            CreateProjectTextBox.Clear();
         }
     }
 }

@@ -37,9 +37,6 @@ namespace P3_Code
             Password = PasswordTextBox.Text;
             FakeAppUserRepository fr = new FakeAppUserRepository();
             credentialsAccepted = fr.Login(Username, Password);
-//           System.Windows.Forms.MessageBox.Show(credentialsAccepted.ToString());
-//            System.Windows.Forms.MessageBox.Show(Username);
-//            System.Windows.Forms.MessageBox.Show(Password);
             if (credentialsAccepted == true)
             {
                 this.Hide();

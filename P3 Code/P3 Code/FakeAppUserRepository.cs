@@ -32,6 +32,16 @@ namespace E3_Code
                     EmailAddress = "matthew.oliver@trojans.dsu.edu",
                     IsAuthenticated = true
 
+                }); AppUsers.Add("a", new AppUser
+
+                {
+                    UserName = "a",
+                    Password = "b",
+                    LastName = "c",
+                    FirstName = "d",
+                    EmailAddress = "nathan.huisman@trojans.dsu.edu",
+                    IsAuthenticated = true
+
                 });
             }
         }

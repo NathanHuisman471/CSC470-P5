@@ -30,7 +30,7 @@
         {
             this.CreateProjectAddButton = new System.Windows.Forms.Button();
             this.CreateProjectCancelButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CreateProjectTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -54,12 +54,12 @@
             this.CreateProjectCancelButton.UseVisualStyleBackColor = true;
             this.CreateProjectCancelButton.Click += new System.EventHandler(this.CreateProjectCancelButton_Click);
             // 
-            // textBox1
+            // CreateProjectTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 20);
-            this.textBox1.TabIndex = 2;
+            this.CreateProjectTextBox.Location = new System.Drawing.Point(115, 36);
+            this.CreateProjectTextBox.Name = "CreateProjectTextBox";
+            this.CreateProjectTextBox.Size = new System.Drawing.Size(272, 20);
+            this.CreateProjectTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 144);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CreateProjectTextBox);
             this.Controls.Add(this.CreateProjectCancelButton);
             this.Controls.Add(this.CreateProjectAddButton);
             this.Name = "CreateProject";
@@ -91,7 +91,7 @@
 
         private System.Windows.Forms.Button CreateProjectAddButton;
         private System.Windows.Forms.Button CreateProjectCancelButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CreateProjectTextBox;
         private System.Windows.Forms.Label label1;
     }
 }
