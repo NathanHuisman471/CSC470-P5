@@ -60,8 +60,6 @@ namespace P3_Code
                     {
                         MessageBox.Show("Cannot modify your current session project.");
                         this.Hide();
-                        MainForm returntomain = new MainForm();
-                        returntomain.Show();
                         this.Close();
 
                     }
@@ -105,10 +103,8 @@ namespace P3_Code
 
                     if( result == Properties.Settings.Default.Preference)
                     {
-                        MessageBox.Show("Cannot remove your current session project");
+                        MessageBox.Show("Cannot remove your current session project.");
                         this.Hide();
-                        MainForm main = new MainForm();
-                        main.Show();
                         this.Close();
                     }
                     else
@@ -131,7 +127,7 @@ namespace P3_Code
             if(numOfTimesClicked == 1)
             {
                 this.Hide();
-                MessageBox.Show("A project must be selected");
+                MessageBox.Show("A project must be selected.");
                 this.Show();
             } 
             else

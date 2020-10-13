@@ -39,7 +39,7 @@ namespace P3_Code
             }
             else
             {
-                MessageBox.Show("Successfully added project");
+                MessageBox.Show("Successfully added project.");
             }
             CreateProjectTextBox.Clear();
         }

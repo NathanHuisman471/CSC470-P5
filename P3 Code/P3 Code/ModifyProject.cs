@@ -30,9 +30,10 @@ namespace P3_Code
 
         private void ModifyProjectModifyButton_Click(object sender, EventArgs e)
         {
-            string oldName = "Accounting project";
+            
             string newName = ModifyProjectTextBox.Text;
-            string UserName = "davebish";
+            string oldName = Properties.Settings.Default.Preference;
+            string UserName = Properties.Settings.Default.Username;
             FakePreferenceRepository preferenceRepository = new FakePreferenceRepository();
             string pref = preferenceRepository.GetPreference(UserName, oldName);
             if(pref == "")

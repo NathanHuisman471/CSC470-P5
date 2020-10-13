@@ -42,7 +42,7 @@ namespace P3_Code
 
         private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
             FormSelectProject selectproj = new FormSelectProject("Main");
             selectproj.Show();
         }
