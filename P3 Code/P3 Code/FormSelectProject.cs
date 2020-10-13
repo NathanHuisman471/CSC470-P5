@@ -39,19 +39,6 @@ namespace P3_Code
             }
         }
 
-        public string SelectProjectToModifyOrDelete(string caller)
-        {
-            FakeProjectRepository projectRepository = new FakeProjectRepository();
-            if(caller == "Modify")
-            {
-                string selectedItem = listBox1.SelectedItem.ToString();
-                char idInCharacterForm = selectedItem[0];
-                int selectedId = idInCharacterForm - '0';
-                MessageBox.Show(selectedId.ToString());
-            }
-            return ("hi");
-        }
-
         private void buttonSelectProject_Click(object sender, EventArgs e)
         {
 

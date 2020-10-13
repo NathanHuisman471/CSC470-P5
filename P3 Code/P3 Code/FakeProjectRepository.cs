@@ -67,8 +67,6 @@ namespace P3_Code
         {
             Id = GetNextID();
 
-            MessageBox.Show(Id.ToString());
-
             //make sure user given name is valid
             project.Name = project.Name.Trim();
             project.Name.Trim(); //removes leading and trailing white spaces

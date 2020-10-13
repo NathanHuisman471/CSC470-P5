@@ -22,6 +22,16 @@ namespace P3_Code
         private void RemoveProject_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+            FakeProjectRepository projectRepository = new FakeProjectRepository();
+            List<Project> list = projectRepository.GetAll();
+
+            foreach (var Project in list)
+            {
+                if(projectToBeRemoved == Project.Id)
+                {
+                    ProjectToBeRemovedLabel.Text = Project.Name;
+                }
+            }
         }
 
         private void RemoveProjectRemoveButton_Click(object sender, EventArgs e)
