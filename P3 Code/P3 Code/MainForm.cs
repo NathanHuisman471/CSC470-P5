@@ -30,8 +30,9 @@ namespace P3_Code
             string project = Properties.Settings.Default.Preference;
 
             FakePreferenceRepository pref = new FakePreferenceRepository();
+            string preference = pref.GetPreference(username, project);
 
-            string title = pref.GetPreference(username, project);
+            string title = pref.GetPreference(username, preference);
             this.Text = "Main - " + project;
         }
 

@@ -55,6 +55,10 @@ namespace P3_Code
                 {
                     string selectedItem = listBox1.SelectedItem.ToString();
                     string result = selectedItem.Substring(4, selectedItem.Length - 4);
+                    string Username = Properties.Settings.Default.Username;
+
+                    FakePreferenceRepository preference = new FakePreferenceRepository();
+                    string pref = preference.GetPreference(Username, result);
 
                     if( result == Properties.Settings.Default.Preference)
                     {

@@ -22,10 +22,21 @@ namespace P3_Code
         {
 
         }
-
+        int numOfTimesClicked;
         private void FormLoginCancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            numOfTimesClicked++;
+
+            if (numOfTimesClicked == 1)
+            {
+                
+                MessageBox.Show("Username and password must be selected");
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
         }
 
         string Username;
@@ -49,6 +60,7 @@ namespace P3_Code
 
             {
                 System.Windows.Forms.MessageBox.Show("Incorrect Username/Password");
+                Application.Exit();
             }
         }
 

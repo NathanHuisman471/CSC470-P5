@@ -36,10 +36,7 @@ namespace P3_Code
             string UserName = Properties.Settings.Default.Username;
             FakePreferenceRepository preferenceRepository = new FakePreferenceRepository();
             string pref = preferenceRepository.GetPreference(UserName, oldName);
-            if(pref == "")
-            {
-                MessageBox.Show("Couldn't find user or preference" + pref);
-            }
+            
             FakeProjectRepository projectRepository = new FakeProjectRepository();
             //string newName = ModifyProjectTextBox.Text;
             string result = projectRepository.Modify(idToBeModified, new Project { Name = newName });

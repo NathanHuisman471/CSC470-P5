@@ -27,14 +27,12 @@ namespace P3_Code
             {
                 NameValuePair.TryGetValue(PreferenceName, out value);
             }
-            value = Properties.Settings.Default.Preference;
+           
             return value;
         }
 
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {
-
-            Dictionary<string, Dictionary<string, string>> preferences = new Dictionary<string, Dictionary<string, string>>();
 
             Dictionary<string, string> NameValuePair = new Dictionary<string, string>();
             string value = "";
