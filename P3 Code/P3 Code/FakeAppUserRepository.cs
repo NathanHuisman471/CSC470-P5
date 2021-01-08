@@ -64,6 +64,7 @@ namespace E3_Code
             }
             return users;
         }
+
         public bool SetAuthentication(string UserName, bool IsAuthenticated)
         {
             bool authentication = false;
